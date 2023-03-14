@@ -1,0 +1,67 @@
+
+#Aldığı isim soy isim ile listeye öğrenci ekleyen
+
+ogrenciler=["Ahmet Ateş","Mutlu Güler","Ayşe Sena"]
+
+AD=input("Öğrenci Adi:")
+SOYAD=input("Öğrenci Soyad:")
+
+#print(AD +"  "+ SOYAD)
+print (ogrenciler)
+
+print ("--------------------------")
+
+#Aldığı isim soy isim ile listeye öğrenci ekleyen
+ogrenciler.append(AD + " " + SOYAD)
+print(ogrenciler)
+print ("--------------------------")
+
+#Aldığı isim soy isim ile eşleşen değeri listeden kaldıran
+s=input("Silinicek Öğrenci Adi Soyadi: ")
+for ogren in ogrenciler:
+    if ogren==s:
+        ogrenciler.remove(s)
+        print("Öğrenci Listeden Silindi")
+else:
+    print("Öğrenci Bulunamamiştir.")
+
+
+print ("--------------------------")
+
+#Listeye birden fazla öğrenci eklemeyi mümkün kılan
+
+sayi=int(input("Eklenecek Öğrenci Sayisini Giriniz: "))
+a=0
+while (a<sayi):
+    yeniogrenci=input("Öğrenci Adi Soyadi: ")
+    a+=1
+    ogrenciler.extend([yeniogrenci])
+    print(ogrenciler)
+    
+print ("--------------------------")
+
+#Listedeki tüm öğrencileri tek tek ekrana yazdıran
+
+for ogrenci in ogrenciler:
+    print(ogrenci)
+print ("--------------------------")
+
+#Öğrencinin listedeki index numarası öğrenci numarası olarak kabul edildiğini düşünerek öğrencinin numarasını öğrenmeyi mümkün kılan
+
+
+ogrencino=input("Öğrenci Numarasini Öğrenmek İstediğiniz Öğrencinin Adi Ve Soyadini Yaziniz: ")
+numara=ogrenciler.index(ogrencino)
+print(ogrencino + " adli öğrencinin numarasi: " + str(numara))
+print ("--------------------------")
+
+
+#Listeden birden fazla öğrenci silmeyi mümkün kılan (döngü kullanınız)
+ogrsil=int(input(" Silmek İstenilen Öğrenci Sayisi: "))
+b=0
+while (b < ogrsil):
+    ogrsilme=(input(" Silmek İstenilen Öğrencinin Adi Soyadi: "))
+    ogrenciler.remove(ogrsilme)
+    b += 1
+    print(ogrenciler)
+
+print ("--------------------------")
